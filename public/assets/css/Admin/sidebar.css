@@ -1,0 +1,156 @@
+/* Sidebar Styling */
+.sidebar {
+    background-color: #0d47a1;
+    height: 100vh;
+    color: white;
+    padding-top: 30px;
+    position: fixed;
+    width: 220px;
+    overflow-y: auto;
+}
+
+.logo-section {
+    text-align: center;
+}
+
+.dashboard-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.portal-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.sidebar h4 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.sidebar button {
+    width: 100%;
+    margin-bottom: 13px;
+    background-color: #1565c0;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    text-align: left;
+    /* if your menu uses buttons */
+}
+
+.sidebar button:hover {
+    background-color: #1976d2;
+}
+
+/* ✅ Active sidebar item */
+.sidebar button.active,
+.sidebar a.active {
+    background: #ffffff !important;
+    color: #0d47a1 !important;
+    font-weight: bold;
+    border-left: 5px solid #ffcc00;
+    /* DOLE yellow accent */
+}
+
+/* ✅ Hover effect */
+.sidebar button:hover,
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* =======================================================
+   ✅ Sidebar Active + Hover States (Shared across pages)
+   ======================================================= */
+
+.sidebar-btn {
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: #1565c0;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    text-align: left;
+    transition: background 0.3s, color 0.3s, border-left 0.3s;
+    cursor: pointer;
+}
+
+.sidebar-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Active Page Button */
+.sidebar-btn.active {
+    background-color: #ffffff !important;
+    color: #0d47a1 !important;
+    font-weight: bold;
+    border-left: 5px solid #ffcc00;
+    /* DOLE Yellow Accent */
+}
+
+/* =======================================================
+   ✅ SIDEBAR ICON UPGRADE (SAFE PATCH)
+   ======================================================= */
+
+/* Resize sidebar cleanly */
+.sidebar {
+    width: 280px;
+    /* upgraded width */
+    padding: 25px 12px;
+}
+
+/* Replace old button layout with flex nav links */
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 240px;
+    margin-bottom: 14px;
+    background-color: #1565c0;
+    border-radius: 6px;
+    padding: 12px 16px;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s, border-left 0.3s;
+}
+
+/* Icon sizing */
+.sidebar .nav-link i {
+    font-size: 18px;
+    min-width: 22px;
+    text-align: center;
+}
+
+/* Hover effect */
+.sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Active state */
+.sidebar .nav-link.active {
+    background-color: #ffffff !important;
+    color: #0d47a1 !important;
+    font-weight: bold;
+    border-left: 5px solid #ffcc00;
+}
+
+/* Text inside link */
+.sidebar .nav-link span {
+    font-size: 15px;
+}
+
+/* Prevent old button styles from affecting links */
+.sidebar button {
+    display: none;
+}

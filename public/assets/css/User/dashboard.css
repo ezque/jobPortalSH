@@ -1,0 +1,212 @@
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+    background: #eef2f7;
+    overflow-x: hidden;
+}
+
+/* ===== JOB SECTION ===== */
+.jobs-section {
+    padding: 25px 40px;
+}
+
+.jobs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.jobs-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0b2e63;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 10px 14px;
+    width: 260px;
+    border: 1px solid #ccd3dd;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.search-bar button {
+    padding: 10px 18px;
+    background: #0a55c9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search-bar button:hover {
+    background: #0847a5;
+}
+
+/* ===== JOB CARDS GRID ===== */
+.jobs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: flex-start;
+}
+
+
+/* ===== JOB CARD ===== */
+.job-card {
+    background: white;
+    border-radius: 14px;
+    padding-bottom: 18px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    transition: 0.25s ease;
+    width: 250px;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+.job-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.job-card h4 {
+    margin: 12px 0;
+    font-size: 19px;
+    font-weight: 600;
+    color: #003f87;
+}
+
+.job-card button {
+    width: 85%;
+    padding: 12px;
+    margin-top: 5px;
+    background: #2ecc71;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.job-card button:hover {
+    background: #28b463;
+}
+
+/* ===== POPUP OVERLAY ===== */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn .25s ease;
+    z-index: 1000;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.popup-box {
+    background: #ffffff;
+    padding: 25px;
+    width: 90%;
+    max-width: 650px;
+    border-radius: 14px;
+    position: relative;
+    animation: popupSlide .25s ease;
+}
+
+@keyframes popupSlide {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-size: 20px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+/* Popup content */
+.job-details img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+.job-details h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #0b2e63;
+}
+
+.job-details p {
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+.apply-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: #0a55c9;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.apply-btn:hover {
+    background: #0847a5;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .top-logo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .jobs-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+}
