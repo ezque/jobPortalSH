@@ -14,6 +14,8 @@ Route::get('/', function () {
 
 Route::get('/register', [AuthController::class, 'viewRegister'])->name('viewRegister');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/change-password', [AuthController::class, 'changePassword'])->name('changePassword');
+
 
 Route::get('/login', [AuthController::class, 'viewLogin'])->name('viewLogin');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
@@ -24,6 +26,7 @@ Route::get('/fetch-user-jobs', [UserController::class, 'fetchJobs'])->name('fetc
 Route::get('/view-user-notification', [UserController::class, 'viewUserNotification'])->name('viewUserNotification');
 Route::get('/user-profile', [UserController::class, 'viewUserProfile'])->name('viewUserProfile');
 Route::get('/manage-user', [UserController::class, 'adminManageUsers'])->name('viewManageUsers');
+Route::get('/user-info', [UserController::class, 'getUserInfo'])->name('getUserInfo');
 Route::patch('/user/status/{id}', [UserController::class, 'updateUserStatus'])->name('updateUserStatus');
 Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('updateProfile');
 

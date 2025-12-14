@@ -12,8 +12,16 @@
 
         <div class="profile-dropdown" onclick="toggleDropdown()">
             <div class="profile">
-                <img src="{{ asset('assets/images/profile.jpg') }}" alt="Profile" />
-                <span>SAMYANG G <br><small>Employer</small></span>
+                <img
+                    src="{{ auth()->user()->profile_image
+                        ? asset(auth()->user()->profile_image)
+                        : asset('assets/images/logo.png') }}"
+                    alt="Profile Image"
+                >
+                <span>
+                    {{ auth()->user()->name }} <br>
+                    <small>{{ auth()->user()->role ?? 'User' }}</small>
+                </span>
                 <i class="arrow">&#9662;</i>
             </div>
             <div class="dropdown-menu" id="profileMenu">

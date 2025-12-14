@@ -88,5 +88,12 @@ class UserController extends Controller
             'profile_image' => isset($data['profile_image']) ? asset($data['profile_image']) : null
         ]);
     }
+    public function getUserInfo()
+    {
+        $user = auth()->user();
+        return response()->json([
+            'user' => $user
+        ]);
+    }
 
 }

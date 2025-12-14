@@ -113,7 +113,7 @@ class JobController extends Controller
 
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('jobs', 'public');
-            $job->image = 'storage/' . $imagePath;
+            $job->image = '/storage/' . $imagePath;
         }
 
         $job->save();
