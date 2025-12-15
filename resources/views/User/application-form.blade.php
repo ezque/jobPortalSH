@@ -53,7 +53,13 @@
             <input type="text" name="languages_spoken" placeholder="Languages Spoken">
         </div>
 
-        <input type="file" name="resume" class="file-input">
+        <input
+            type="file"
+            name="resume"
+            class="file-input"
+            accept=".pdf,.doc,.docx"
+        >
+
 
         <div class="btn-area">
             <button type="button" class="cancel-btn" onclick="history.back()">Cancel</button>
