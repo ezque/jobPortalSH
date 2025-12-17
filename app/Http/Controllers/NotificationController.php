@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Notification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NotificationController extends Controller
 {
     public function viewAdminNotification()
     {
         $userId = auth()->id();
+
+        Notification::where('receiver_id', $userId)
+            ->where('status', 'unread')
+            ->update(['status' => 'read']);
 
         $notifications = Notification::where('receiver_id', $userId)
             ->orderBy('created_at', 'desc')
@@ -19,7 +24,11 @@ class NotificationController extends Controller
     }
     public function viewUserNotification()
     {
-        $userId = auth()->id();
+        $userId = Auth::id();
+
+        Notification::where('receiver_id', $userId)
+            ->where('status', 'unread')
+            ->update(['status' => 'read']);
 
         $notifications = Notification::where('receiver_id', $userId)
             ->orderBy('created_at', 'desc')
@@ -46,5 +55,16 @@ class NotificationController extends Controller
         $notification->markAsRead();
 
         return redirect()->back()->with('success', 'Notification marked as read.');
+    }
+
+    public function unreadNotificationCount()
+    {
+        $count = Notification::unread()
+            ->where('receiver_id', Auth::id())
+            ->count();
+
+        return response()->json([
+            'count' => $count
+        ]);
     }
 }

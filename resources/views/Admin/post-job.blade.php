@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/Admin/sidebar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/Admin/dashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/Admin/post-job.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/Admin/header.css') }}">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 

@@ -7,7 +7,9 @@
     <div class="right-header">
         <a href="{{ route('viewUserNotification') }}" class="notification">
             <span class="notif-icon">&#128276;</span>
+            <span class="notif-count" id="notifCount" style="display:none;">0</span>
         </a>
+
 
 
         <div class="profile-dropdown" onclick="toggleDropdown()">
@@ -58,5 +60,24 @@
             }
         }
     });
+    function loadUnreadNotifications() {
+        fetch("{{ route('notificationCountUnread') }}")
+            .then(response => response.json())
+            .then(data => {
+                const badge = document.getElementById('notifCount');
+                if (data.count > 0) {
+                    badge.innerText = data.count;
+                    badge.style.display = 'inline-block';
+                } else {
+                    badge.style.display = 'none';
+                }
+            });
+    }
+
+    // Load on page open
+    loadUnreadNotifications();
+
+    // Optional: refresh every 30 seconds
+    setInterval(loadUnreadNotifications, 30000);
 </script>
 

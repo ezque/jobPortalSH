@@ -54,3 +54,4 @@ Route::get('/view-admin-notification', [NotificationController::class, 'viewAdmi
 Route::get('/view-user-notification', [NotificationController::class, 'viewUserNotification'])->name('viewUserNotification');
 Route::delete('/notification/delete/{id}', [NotificationController::class, 'deleteNotification'])->name('deleteNotification');
 Route::patch('/notification/read/{id}', [NotificationController::class, 'markAsRead'])->name('markAsRead');
+Route::get('/notification-count-unread', [NotificationController::class, 'unreadNotificationCount'])->name('notificationCountUnread');

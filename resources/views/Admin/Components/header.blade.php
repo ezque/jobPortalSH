@@ -1,7 +1,6 @@
 <!-- Header -->
 <div class="top-bar"
-     style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
-    <h1>Welcome to the Admin Dashboard</h1>
+     style="display:flex; justify-content:end; align-items:center; margin-bottom:20px;">
 
     <!-- Profile Dropdown -->
     <div class="profile-dropdown">

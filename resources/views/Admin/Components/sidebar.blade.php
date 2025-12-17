@@ -27,10 +27,20 @@
         <span>Manage Users</span>
     </a>
 
-    <a href="{{ route('viewAdminNotification') }}" class="nav-link {{ Request::is('view-admin-notification*') ? 'active' : '' }}">
+{{--    <a href="{{ route('viewAdminNotification') }}" class="nav-link {{ Request::is('view-admin-notification*') ? 'active' : '' }}">--}}
+{{--        <i class="fas fa-bell"></i>--}}
+{{--        <span>Notification</span>--}}
+{{--    </a>--}}
+    <a href="{{ route('viewAdminNotification') }}"
+       class="nav-link {{ Request::is('view-admin-notification*') ? 'active' : '' }}"
+       id="adminNotifLink">
+
         <i class="fas fa-bell"></i>
         <span>Notification</span>
+
+        <span class="notif-badge" id="adminNotifCount" style="display:none;">0</span>
     </a>
+
 </div>
 
 <script>
@@ -43,4 +53,22 @@
             dropdown.classList.remove("active");
         }
     });
+    function loadAdminUnreadNotifications() {
+        fetch("{{ route('notificationCountUnread') }}")
+            .then(res => res.json())
+            .then(data => {
+                const badge = document.getElementById('adminNotifCount');
+
+                if (data.count > 0) {
+                    badge.textContent = data.count;
+                    badge.style.display = 'inline-block';
+                } else {
+                    badge.style.display = 'none';
+                }
+            });
+    }
+
+    loadAdminUnreadNotifications();
+
+    setInterval(loadAdminUnreadNotifications, 30000);
 </script>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/Admin/manage-user.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/Admin/sidebar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/Admin/dashboard.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/Admin/header.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>

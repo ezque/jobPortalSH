@@ -12,10 +12,6 @@
 
     <header>
         <img src="{{ asset('assets/images/logo.png') }}" class="logo" alt="image">
-        <div class="welcome">
-            <h3>Welcome back!!</h3>
-            <p>Here's what's happening with your job today.</p>
-        </div>
     </header>
 
     <h2 class="form-title">Application Form for {{ $job->job_name }}</h2>
@@ -70,5 +66,12 @@
 
 </div>
 
+@if(session('error'))
+    <script>
+        alert("{{ session('error') }}");
+    </script>
+@endif
+
 </body>
+
 </html>

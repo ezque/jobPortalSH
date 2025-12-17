@@ -20,7 +20,21 @@
 .top-logo-img {
     width: 55px;
 }
+.notification {
+    position: relative;
+}
 
+.notif-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
 .logo-text {
     font-size: 26px;
     font-weight: 600;

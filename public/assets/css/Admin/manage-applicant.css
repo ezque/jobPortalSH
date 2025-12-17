@@ -1,0 +1,439 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f6fa;
+    margin: 0;
+}
+
+
+/* Main Content */
+.main-content {
+    padding: 20px 10px;
+    width: 80%;
+    margin-left: 330px;
+    background-color: #f0f4ff;
+}
+
+
+.header-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* Job Cards */
+.card-job {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.card-job:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-job img {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-job .card-body {
+    background-color: #0d47a1;
+    color: white;
+    text-align: center;
+}
+
+/* Stat boxes */
+.stat-box {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+
+/* Applicant Cards */
+.applicant-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.applicant-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.applicant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* =======================================================
+   MANAGE USERS SECTION - REWRITTEN
+   ======================================================= */
+
+/* Container for user list */
+.user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* slightly bigger spacing between cards */
+}
+
+/* Each user card */
+.user-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Left section: avatar + name/email */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 2;
+    /* takes larger portion */
+    min-width: 200px;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0d47a1;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0d47a1;
+}
+
+.user-email {
+    font-size: 13px;
+    color: #555;
+}
+
+/* Job position column */
+.job {
+    width: 120px;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+    flex-shrink: 0;
+}
+
+/* Status badges */
+.status {
+    width: 100px;
+    text-align: center;
+    padding: 6px 14px;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.status.active {
+    background-color: #2e7d32;
+    /* Green for Active */
+}
+
+.status.suspended {
+    background-color: #0288d1;
+    /* Blue for Suspended */
+}
+
+/* Date column */
+.date {
+    font-size: 13px;
+    color: #666;
+    width: 100px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* Action buttons */
+.actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.actions button:hover {
+    transform: scale(1.1);
+}
+
+.actions .edit {
+    color: #1565c0;
+}
+
+.actions .delete {
+    color: #c62828;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 900px) {
+    .user-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .job,
+    .status,
+    .date {
+        text-align: left;
+        width: auto;
+    }
+
+    .actions {
+        align-self: flex-end;
+    }
+}
+
+
+/* =======================================================
+   ⭐ ADDED: SIDEBAR PROFILE SECTION (NON-INVASIVE)
+   ======================================================= */
+
+/* Edge profile card floating near left of main content */
+.edge-profile {
+    position: fixed;
+    top: 20px;
+    /* stays at the top */
+    right: 40px;
+    /* move to TOP RIGHT */
+    left: auto;
+    /* prevent forced left alignment */
+    z-index: 1000;
+}
+
+
+.edge-profile-box {
+    display: flex;
+    align-items: center;
+    background: lch(87.12% 12.8 278.95);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+}
+
+.edge-profile-box img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.edge-profile-box .profile-info h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #0d47a1;
+    font-weight: 600;
+}
+
+.edge-profile-box .profile-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #555;
+}
+
+.edge-profile-box .notification-bell {
+    margin-right: auto;
+    position: relative;
+    font-size: 20px;
+    color: #0d47a1;
+    cursor: pointer;
+}
+
+.edge-profile-box .notification-bell .badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #ff0000;
+    color: #fff;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Base style for all stat boxes */
+.stat-box {
+    padding: 10px;
+    /* inner spacing */
+    border-radius: 10px;
+    /* rounded corners */
+    width: 100%;
+    /* width of each box */
+    text-align: center;
+    /* center text */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    /* slight shadow */
+    font-weight: 600;
+}
+
+/* Number inside the box */
+.stat-number {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* Individual colors for each box */
+.stat-jobs {
+    background-color: #1565c0;
+    /* blue */
+    color: white;
+}
+
+.stat-applicants {
+    background-color: hwb(48 0% 0%);
+    /* yellow */
+    color: #0d47a1;
+    /* dark text for contrast */
+}
+
+.stat-users {
+    background-color: hsl(123, 46%, 34%);
+    /* green */
+    color: white;
+}
+
+.stat-notifications {
+    background-color: hwb(0 18% 17%);
+    /* red */
+    color: white;
+}
+
+.stat-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    /* keeps boxes centered */
+    gap: 5px;
+    flex-wrap: nowrap;
+    /* prevents vertical stacking */
+}
+
+.chart-box {
+    background: #fff;
+    border-radius: 25px;
+    padding: 10px 5px;
+    width: 100%;
+    /* FIXED */
+    max-width: 1400px;
+    margin: 20px auto;
+    /* nice spacing */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+#jobChart {
+    width: 100% !important;
+    /* full width of container */
+    height: 380px !important;
+    /* taller height for better visibility */
+}
+
+/* Move the heading a bit higher */
+h2 {
+    margin-top: 5px;
+    /* reduce the default top margin */
+    margin-bottom: 20px;
+    /* add some space below the heading */
+}
+
+/* Add space below the chart */
+.chart-box {
+    margin-bottom: 80px;
+    /* increase bottom margin */
+}
+
+/* Profile Dropdown Container */
+.profile-dropdown {
+    position: relative;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 75px;
+    right: 0;
+    background: #fff;
+    width: 180px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+    display: none;
+    z-index: 2000;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    color: #0d47a1;
+    text-decoration: none;
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+    background: #f3f6fa;
+}
+
+.dropdown-menu i {
+    width: 18px;
+}
+
+/* Show menu when active */
+.profile-dropdown.active .dropdown-menu {
+    display: block;
+}
+
+/* Pointer cursor */
+.profile-toggle {
+    cursor: pointer;
+}

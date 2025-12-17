@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/Admin/notification.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/Admin/dashboard.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/Admin/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/Admin/header.css') }}">
     <!-- Optional icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script src="https://unpkg.com/lucide@latest"></script>

@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
+meta charset="UTF-8" />
 <head>
-    <meta charset="UTF-8" />
+    <
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Job Portal Admin Dashboard</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/Admin/dashboard.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/Admin/sidebar.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/Admin/header.css') }}">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
     <body>
+        <!-- Sidebar -->
+        <div class="sidebar-container">
+            @include('Admin.Components.sidebar')
+        </div>
 
-    <!-- Sidebar -->
-    @include('Admin.Components.sidebar')
+
 
     <!-- Main Content -->
     <div class="main-content">
