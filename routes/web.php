@@ -38,6 +38,16 @@ Route::get('/fetch-dashboard-data', [AdminController::class, 'fetchDashboardData
 Route::get('/view-manage-applicant', [ApplicantController::class, 'viewManageApplicants'])->name('viewManageApplicants');
 Route::get('/application-form/{id}', [ApplicantController::class, 'viewApplicationForm'])->name('viewApplicationForm');
 Route::post('/submit/application-form/{id}', [ApplicantController::class, 'submitApplicationForm'])->name('submitApplicationForm');
+Route::get('/check-application/{id}', function ($id) {
+    return response()->json([
+        'applied' => \App\Models\Applicant::where('user_id', auth()->id())
+            ->where('job_id', $id)
+            ->exists()
+    ]);
+});
+Route::patch('/approve-applicant/{id}', [ApplicantController::class, 'approveApplicant'])->name('approveApplicant');
+Route::patch('/reject-applicant/{id}', [ApplicantController::class, 'rejectApplicant'])->name('rejectApplicant');
+
 Route::patch('/approve-applicant/{id}', [ApplicantController::class, 'approveApplicant'])->name('approveApplicant');
 Route::patch('/reject-applicant/{id}', [ApplicantController::class, 'rejectApplicant'])->name('rejectApplicant');
 
